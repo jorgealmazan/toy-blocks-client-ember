@@ -1,25 +1,85 @@
-.container {
-  padding: 0 20em;
+body {
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+  color: #4d4d4d;
+  min-width: 230px;
+  max-width: 650px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 300;
 }
-.left-node-container {
-  width: 60%;
-  height: 100%;
-  display: inline-block; 
+
+td {
+  padding: 12px;
 }
-.right-node-container {
-  width: 39%;
-  height: 100%;
-  display: inline-block;
+
+h2 {
+  color: #5bb7db;
 }
-.node-container {
-  box-shadow: 0px 3px 6px 1px rgba(0,0,0,1);
-  margin-bottom: 2em;
+
+.savings {
+  color: #60b044;
 }
-.online-dropdown {
-  background-color: white; 
-  color: black;
-  border-color: white;
+.loss {
+  color: #ff0000;
 }
+input.small {
+  width: 46px;
+}
+td.fuel-savings-label {
+  width: 175px;
+}
+
+.root-box{
+  padding-top: 56px;
+}
+
+.root-box__title{
+  font-size: 2.125rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  line-height: 1.235;
+  letter-spacing: 0.00735em;
+}
+
+.node-container{
+  margin: 16px 0;
+  box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.15);
+}
+
+.node-container-inner{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.node-container-header{
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  color: #263238;
+  display: block;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0em;
+  margin: 10px 0 0;
+}
+
+.node-container-content{
+  color: #8a9094;
+  font-size: 0.875rem;
+  line-height: 2;
+  margin-bottom: 10px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.00938em;
+}
+
 .green-dot {
   border-radius: 50%;
   display: inline-block;
@@ -27,6 +87,7 @@
   height: 5px;
   background-color: green;
 }
+
 .red-dot {
   border-radius: 50%;
   display: inline-block;
@@ -34,9 +95,15 @@
   height: 5px;
   background-color: red;
 }
-.status-container {
-  position: relative;
-  bottom: 1.5em;
+
+span.text{
+  color: rgb(38, 50, 56);
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding-left: 5px;
+  letter-spacing: 1px;
 }
 
 a.node-link-container:link {
@@ -49,4 +116,9 @@ a.node-link-container:visited {
   text-decoration: inherit;
   color: inherit;
   cursor: auto;
+}
+
+.status-container{
+  display: flex;
+  align-items: center;
 }

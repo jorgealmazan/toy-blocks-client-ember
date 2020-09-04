@@ -1,11 +1,5 @@
 import Route from '@ember/routing/route';
 import fetch from 'fetch';
-import RSVP from 'rsvp';
-import {
-  isAbortError,
-  isServerErrorResponse,
-  isUnauthorizedResponse
-} from 'ember-fetch/errors';
 
 export default class ApplicationRoute extends Route {
   async model() {
@@ -42,11 +36,11 @@ export default class ApplicationRoute extends Route {
           if(response){
             if (response.status >= 400) {
               nodes[i].online = false;
-            } 
-
-            let data = await response.json();      
-            nodes[i].name = data.node_name;
-            nodes[i].online = true;
+            } else {
+              let data = await response.json();      
+              nodes[i].name = data.node_name;
+              nodes[i].online = true;  
+            }
           }
         }catch(e){
           console.log(e)

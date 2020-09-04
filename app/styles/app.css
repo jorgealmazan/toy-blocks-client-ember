@@ -38,3 +38,15 @@
   position: relative;
   bottom: 1.5em;
 }
+
+a.node-link-container:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+a.node-link-container:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}

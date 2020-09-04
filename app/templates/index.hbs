@@ -1,7 +1,8 @@
 <div class="container">
   <h1>Nodes</h1>
-  {{#each model as |node|}}
-    <div class="node-container" {{action 'setExpanded' node }}>
+  {{#each @model as |node|}}
+    <a href="#" class="node-link-container" {{ on "click" (fn this.setExpanded node) }}>
+    <div class="node-container">
       <div class="left-node-container">
         <h3>
           {{node.name}}
@@ -20,12 +21,13 @@
           </div> 
         </div>
       </div>
-      {{#if (eq node chosen)}} 
-      <div class="block-container">
-        <p>Blocks go here</p>
-      </div>
+      {{#if (eq node this.chosen)}} 
+        <div class="block-container">
+          <p>Blocks go here</p>
+        </div>
       {{/if}}
     </div>
+    </a> 
   {{/each}}
 </div>
 {{outlet}}

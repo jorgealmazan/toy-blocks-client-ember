@@ -1,7 +1,7 @@
 <div class="root-box">
   <h1 class="root-box__title">Nodes</h1>
   {{#each model as |node|}}
-    <a href="#" class="node-link-container" {{ on "click" (fn this.setExpanded node) }}></a>
+    <a href="#" class="node-link-container" {{ on "click" (fn this.setExpanded node) }}>
     <div class="node-container">
       <div class="node-container-inner">
         <div class="node-container-inner-left">
@@ -29,6 +29,7 @@
         </div>
       {{/if}}
     </div>
+    </a>
   {{/each}}
 </div>
 {{outlet}}

@@ -36,21 +36,21 @@ export default class ApplicationRoute extends Route {
       }
     ] 
 
-    try {
       for (var i = 0; i < nodes.length; i++) {
-        let response = await fetch(nodes[i].url + '/api/v1/status');
-        if(response){
-          if (response.status >= 400) {
-            nodes[i].online = false;
-          } 
+        try {
+          let response = await fetch(nodes[i].url + '/api/v1/status');
+          if(response){
+            if (response.status >= 400) {
+              nodes[i].online = false;
+            } 
 
-          let data = await response.json();      
-          nodes[i].name = data.node_name;
-          nodes[i].online = true;
-        }
+            let data = await response.json();      
+            nodes[i].name = data.node_name;
+            nodes[i].online = true;
+          }
+        }catch(e){
+          console.log(e)
       }
-    }catch(e){
-      console.log(e)
     }
 
     return nodes;

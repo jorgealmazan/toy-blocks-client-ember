@@ -1,9 +1,6 @@
 <div class="container">
   <h1>Nodes</h1>
-  {{log 'model' model}} 
-
   {{#each model as |node|}}
-    {{log 'expand' chosen}} 
     <div class="node-container" {{action 'setExpanded' node }}>
       <div class="left-node-container">
         <h3>
@@ -24,7 +21,7 @@
         </div>
       </div>
       {{#if (eq node chosen)}} 
-      <div>
+      <div class="block-container">
         <p>Blocks go here</p>
       </div>
       {{/if}}

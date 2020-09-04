@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-<div class="container">
-  <h1>Nodes</h1>
-  {{#each @model as |node|}}
-    <a href="#" class="node-link-container" {{ on "click" (fn this.setExpanded node) }}></a>
-    <div class="node-container">
-      <div class="left-node-container">
-        <h3>
-          {{node.name}}
-        </h3>
-        <p>
-          {{node.url}}
-        </p>
-      </div>
-      <div class="right-node-container">
-        <div class="dropdown">
-         <div display="flex" class="status-container" alignItems="center">
-            <span class={{if node.online 'green-dot' 'red-dot'}}></span>
-            <span class='text'>
-              {{if node.online 'Online' 'Offline'}}
-            </span>
-          </div> 
-=======
 <div class="root-box">
   <h1 class="root-box__title">Nodes</h1>
   {{#each model as |node|}}
@@ -44,7 +21,6 @@
               </span>
             </div> 
           </div>
->>>>>>> 879e1a5... styling nodes
         </div>
       </div>
       {{#if (eq node this.chosen)}} 
@@ -53,7 +29,6 @@
         </div>
       {{/if}}
     </div>
-    </a> 
   {{/each}}
 </div>
 {{outlet}}

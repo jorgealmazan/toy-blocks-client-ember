@@ -1,0 +1,40 @@
+.container {
+  padding: 0 20em;
+}
+.left-node-container {
+  width: 60%;
+  height: 100%;
+  display: inline-block; 
+}
+.right-node-container {
+  width: 39%;
+  height: 100%;
+  display: inline-block;
+}
+.node-container {
+  box-shadow: 0px 3px 6px 1px rgba(0,0,0,1);
+  margin-bottom: 2em;
+}
+.online-dropdown {
+  background-color: white; 
+  color: black;
+  border-color: white;
+}
+.green-dot {
+  border-radius: 50%;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: green;
+}
+.red-dot {
+  border-radius: 50%;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+}
+.status-container {
+  position: relative;
+  bottom: 1.5em;
+}

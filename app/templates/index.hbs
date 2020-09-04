@@ -1,0 +1,34 @@
+<div class="container">
+  <h1>Nodes</h1>
+  {{log 'model' model}} 
+
+  {{#each model as |node|}}
+    {{log 'expand' chosen}} 
+    <div class="node-container" {{action 'setExpanded' node }}>
+      <div class="left-node-container">
+        <h3>
+          {{node.name}}
+        </h3>
+        <p>
+          {{node.url}}
+        </p>
+      </div>
+      <div class="right-node-container">
+        <div class="dropdown">
+         <div display="flex" class="status-container" alignItems="center">
+            <span class={{if node.online 'green-dot' 'red-dot'}}></span>
+            <span class='text'>
+              {{if node.online 'Online' 'Offline'}}
+            </span>
+          </div> 
+        </div>
+      </div>
+      {{#if (eq node chosen)}} 
+      <div>
+        <p>Blocks go here</p>
+      </div>
+      {{/if}}
+    </div>
+  {{/each}}
+</div>
+{{outlet}}

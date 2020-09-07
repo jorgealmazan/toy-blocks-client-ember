@@ -1,0 +1,34 @@
+<div
+    {{did-insert (fn this.isNodeOnline @url)}}
+    {{did-update (fn this.isNodeOnline @url)}}
+>
+    <a href="#" class="node-link-container"></a>
+    <div class="node-container">
+      <div class="node-container-inner">
+        <div class="node-container-inner-left">
+          <h3 class="node-container-header">
+            {{@name}}
+          </h3>
+          <p class="node-container-content">
+            {{@url}}
+          </p>
+        </div>
+        <div class="right-node-container">
+          <div class="dropdown">
+            <div display="flex" class="status-container" alignItems="center">
+              <span class={{if @online 'green-dot' 'red-dot'}}></span>
+              <span class='text status'>
+                {{if @online 'ONLINE' 'OFFLINE'}}
+              </span>
+            </div> 
+          </div>
+        </div>
+      </div>
+      {{#if @expanded}}
+        <div class="block-container">
+          <p>Blocks go here</p>
+        </div>
+      {{/if}}
+    </div>
+</div>
+{{yield}}

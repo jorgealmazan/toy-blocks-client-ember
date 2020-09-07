@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { visit, currentURL, click, findAll } from '@ember/test-helpers';
+import { visit, currentURL, findAll } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 
 module('Acceptance | application', function(hooks) {
@@ -9,13 +9,5 @@ module('Acceptance | application', function(hooks) {
     await visit('/');
     assert.equal(currentURL(), '/');
     assert.equal(findAll('.node-container').length, 4);
-
-    const initBlocks = findAll('.block-container');
-    assert.equal(initBlocks.length, 0);
-
-    await click(findAll('.node-container')[0]);
-
-    const shownBlocks = findAll('.block-container');
-    assert.equal(shownBlocks.length, 1);
   });
 });

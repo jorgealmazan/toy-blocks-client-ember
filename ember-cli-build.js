@@ -9,7 +9,7 @@ module.exports = function(defaults) {
       group: true,
       rulesDir: 'eslint-rules',
       extensions: ['js'],
-    }
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated

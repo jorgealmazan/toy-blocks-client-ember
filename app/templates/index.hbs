@@ -1,35 +1,7 @@
 <div class="root-box">
   <h1 class="root-box__title">Nodes</h1>
   {{#each @model as |node|}}
-    <a href="#" class="node-link-container" {{ on "click" (fn this.setExpanded node) }}>
-    <div class="node-container">
-      <div class="node-container-inner">
-        <div class="node-container-inner-left">
-          <h3 class="node-container-header">
-            {{node.name}}
-          </h3>
-          <p class="node-container-content">
-            {{node.url}}
-          </p>
-        </div>
-        <div class="right-node-container">
-          <div class="dropdown">
-            <div display="flex" class="status-container" alignItems="center">
-              <span class={{if node.online 'green-dot' 'red-dot'}}></span>
-              <span class='text'>
-                {{if node.online 'ONLINE' 'OFFLINE'}}
-              </span>
-            </div> 
-          </div>
-        </div>
-      </div>
-      {{#if (eq node this.chosen)}} 
-        <div class="block-container">
-          <p>Blocks go here</p>
-        </div>
-      {{/if}}
-    </div>
-    </a>
+    <Node @name={{node.name}} @url={{node.url}}/>
   {{/each}}
 </div>
 {{outlet}}

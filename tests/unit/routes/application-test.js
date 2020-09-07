@@ -14,19 +14,19 @@ module('Unit | Route | application', function(hooks) {
       {
         "loading": false,
         "name": "Thawing Springs",
-        "online": true,
+        "online": false,
         "url": "https://thawing-springs-53971.herokuapp.com"
       },
       {
         "loading": false,
         "name": "Secret Lowlands",
-        "online": true,
+        "online": false,
         "url": "https://secret-lowlands-62331.herokuapp.com"
       },
       {
         "loading": false,
         "name": "Calm Anchorage",
-        "online": true,
+        "online": false,
         "url": "https://calm-anchorage-82141.herokuapp.com"
       },
       {

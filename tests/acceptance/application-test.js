@@ -8,6 +8,6 @@ module('Acceptance | application', function(hooks) {
   test('visiting /application', async function(assert) {
     await visit('/');
     assert.equal(currentURL(), '/');
-    assert.equal(findAll('.node-container').length, 4);
+    assert.equal(findAll('md-expansion-panel').length, 4);
   });
 });

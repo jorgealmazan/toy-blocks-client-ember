@@ -1,7 +1,9 @@
 <div class="root-box">
-  <h1 class="root-box__title">Nodes</h1>
-  {{#each @model as |node|}}
-    <Node @name={{node.name}} @url={{node.url}}/>
-  {{/each}}
+  <h1 class="root-box__title"><strong>Nodes</strong></h1>
+  <div class="layout-column flex-xs">
+    {{#each @model as |node|}}
+      <Node @name={{node.name}} @url={{node.url}}/>
+    {{/each}}
+  </div>
 </div>
 {{outlet}}

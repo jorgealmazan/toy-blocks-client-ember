@@ -1,34 +1,41 @@
 <div
-    {{did-insert (fn this.isNodeOnline @url)}}
-    {{did-update (fn this.isNodeOnline @url)}}
+  {{did-insert (fn this.isNodeOnline @url)}}
+  {{did-update (fn this.isNodeOnline @url)}}
 >
-    <a href="#" class="node-link-container"></a>
-    <div class="node-container">
-      <div class="node-container-inner">
-        <div class="node-container-inner-left">
-          <h3 class="node-container-header">
-            {{@name}}
-          </h3>
-          <p class="node-container-content">
-            {{@url}}
-          </p>
-        </div>
-        <div class="right-node-container">
-          <div class="dropdown">
-            <div display="flex" class="status-container" alignItems="center">
-              <span class={{if @online 'green-dot' 'red-dot'}}></span>
-              <span class='text status'>
-                {{if @online 'ONLINE' 'OFFLINE'}}
-              </span>
-            </div> 
-          </div>
-        </div>
+  {{#paper-expansion-panel as |panel|}}
+    {{#panel.collapsed}}
+      <div class="md-panel-header-root">
+        <div class="md-panel-title">{{@name}}</div>
+        <div class="md-panel-summary">{{@url}}</div>
       </div>
-      {{#if @expanded}}
-        <div class="block-container">
-          <p>Blocks go here</p>
+      <div class="md-secondary-container">
+        <span class={{if online 'green-dot' 'red-dot'}}></span>
+        <span class='status'>
+          {{if online 'ONLINE' 'OFFLINE'}}
+        </span>
+      </div>
+      {{paper-icon "keyboard_arrow_down"}}
+    {{/panel.collapsed}}
+
+    {{#panel.expanded as |expanded|}}
+      {{#expanded.header class="md-panel-header-root"}}
+        <div class="md-panel-header-root">
+          <div class="md-panel-title">{{@name}}</div>
+          <div class="md-panel-summary">{{@url}}</div>
         </div>
-      {{/if}}
-    </div>
+        <div class="md-secondary-container">
+          <span class={{if online 'green-dot' 'red-dot'}}></span>
+          <span class='status'>
+            {{if online 'ONLINE' 'OFFLINE'}}
+          </span>
+        </div>
+        {{paper-icon "keyboard_arrow_up"}}
+      {{/expanded.header}}
+
+      {{#expanded.content}}
+        Nodes
+      {{/expanded.content}}
+    {{/panel.expanded}}
+  {{/paper-expansion-panel}}
 </div>
 {{yield}}

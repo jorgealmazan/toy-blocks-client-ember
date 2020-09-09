@@ -31,9 +31,9 @@ module('Integration | Component | node', function(hooks) {
     await render(hbs`
       <Node @name={{name}} @url={{url}}/>
     `);
-    assert.equal(this.element.querySelector('.node-container-header').textContent.trim(), "Node 1")
-    assert.equal(this.element.querySelector('.node-container-content').textContent.trim(), "https://thawing-springs-53971.herokuapp.com")
-    assert.equal(this.element.querySelector('.right-node-container span.status').textContent.trim(), "ONLINE")
+    assert.equal(this.element.querySelector('.md-panel-title').textContent.trim(), "Node 1")
+    assert.equal(this.element.querySelector('.md-panel-summary').textContent.trim(), "https://thawing-springs-53971.herokuapp.com")
+    assert.equal(this.element.querySelector('.md-secondary-container .status').textContent.trim(), "ONLINE")
   });
 
   test('it renders when 404', async function(assert) {
@@ -52,8 +52,8 @@ module('Integration | Component | node', function(hooks) {
       <Node @name={{name}} @url={{url}}/>
     `);
 
-    assert.equal(this.element.querySelector('.node-container-header').textContent.trim(), "Node 2")
-    assert.equal(this.element.querySelector('.node-container-content').textContent.trim(), "https://thawing-springs-53972.herokuapp.com")
-    assert.equal(this.element.querySelector('.right-node-container span.status').textContent.trim(), "OFFLINE")
+    assert.equal(this.element.querySelector('.md-panel-title').textContent.trim(), "Node 2")
+    assert.equal(this.element.querySelector('.md-panel-summary').textContent.trim(), "https://thawing-springs-53972.herokuapp.com")
+    assert.equal(this.element.querySelector('.md-secondary-container .status').textContent.trim(), "OFFLINE")
   });
 });

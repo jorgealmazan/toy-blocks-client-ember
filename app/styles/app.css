@@ -80,6 +80,28 @@ td.fuel-savings-label {
   letter-spacing: 0.00938em;
 }
 
+.block-container{
+  padding: 0 12px;
+  padding-bottom: 16px;
+}
+
+.block-container-inner{
+  background-color: #DCDBDC;
+  padding: 0 12px;
+  margin: 5px 0;
+}
+
+.block-index{
+  color: blue;
+  font-size: 0.700rem;
+  font-weight: bold;
+}
+
+.block-data{
+  color: black;
+  padding-bottom: 5px;
+}
+
 .green-dot {
   border-radius: 50%;
   display: inline-block;

@@ -19,13 +19,22 @@
               <span class='text'>
                 {{if node.online 'ONLINE' 'OFFLINE'}}
               </span>
-            </div> 
+            </div>
           </div>
         </div>
       </div>
-      {{#if (eq node this.chosen)}} 
+      {{#if (eq node this.chosen)}}
         <div class="block-container">
-          <p>Blocks go here</p>
+            {{#each node.blocks as |block|}}
+            <div class="block-container-inner">
+              <div class="block-index">
+                {{block.index}}
+              </div>
+              <div class="block-data">
+                {{block.data}}
+              </div>
+            </div>
+            {{/each}}
         </div>
       {{/if}}
     </div>

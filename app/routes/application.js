@@ -28,7 +28,7 @@ export default class ApplicationRoute extends Route {
         name: 'Node 4',
         loading: false
       }
-    ] 
+    ]
 
       for (var i = 0; i < nodes.length; i++) {
         try {
@@ -37,9 +37,22 @@ export default class ApplicationRoute extends Route {
             if (response.status >= 400) {
               nodes[i].online = false;
             } else {
-              let data = await response.json();      
+              let data = await response.json();
               nodes[i].name = data.node_name;
-              nodes[i].online = true;  
+              nodes[i].online = true;
+              let blocks_response = await fetch(nodes[i].url + '/api/v1/blocks')
+              let block_array = [];
+              if (blocks_response){
+                let blocks_data = await blocks_response.json();
+                let test = blocks_data.data;
+                test.forEach(x => {
+                  let block = {};
+                  block.index = (x.attributes.index / 100).toString().replace('.','');
+                  block.data = x.attributes.data;
+                  block_array.push(block);
+                })
+              }
+              nodes[i].blocks = block_array;
             }
           }
         }catch(e){
